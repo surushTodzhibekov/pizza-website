@@ -7,27 +7,27 @@ import {
   SHADOWS,
   PizzaSize,
 } from "../../constants/designTokens";
-import { PizzaImage } from "./PizzaImage";
-import { SizeSelector } from "./SizeSelector";
-import { IngredientsButton } from "./IngredientsButton";
-import { PriceQuantityRow } from "./PriceQuantityRow";
+import { PizzaImage } from "./pizza-image";
+import { SizeSelector } from "./size-selector";
+import { IngredientsButton } from "./ingredients-button";
+import { PriceQuantityRow } from "./price-quantity-row";
 
-interface Pizza {
+type Pizza = {
   id: number;
   name: string;
   description: string;
   price: number;
   image: string;
   category: string;
-}
+};
 
-interface PizzaCardProps {
+type PizzaCardProps = {
   pizza: Pizza;
   quantity: number;
   selectedSize: PizzaSize;
   onQuantityChange: (id: number, delta: number) => void;
   onSizeSelect: (id: number, size: PizzaSize) => void;
-}
+};
 
 /**
  * PizzaCard Component

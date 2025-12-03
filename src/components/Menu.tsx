@@ -1,17 +1,17 @@
 import React from "react";
 import { SPACING, TYPOGRAPHY, SHADOWS, SIZES } from "../constants/designTokens";
 import { useMenuState } from "../hooks/useMenuState";
-import { CategoryFilter } from "./Menu/CategoryFilter";
-import { PizzaCard } from "./Menu/PizzaCard";
+import { CategoryFilter } from "./menu/category-filter";
+import { PizzaCard } from "./menu/pizza-card";
 
-interface Pizza {
+type Pizza = {
   id: number;
   name: string;
   description: string;
   price: number;
   image: string;
   category: string;
-}
+};
 
 const CATEGORIES = [
   "Show All",
