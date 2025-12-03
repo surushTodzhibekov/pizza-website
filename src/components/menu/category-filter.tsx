@@ -12,15 +12,14 @@ interface CategoryFilterProps {
   onSelect: (category: string) => void;
 }
 
-/**
- * CategoryFilter Component
- * Renders category filter buttons with active state styling
- */
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   categories,
   selectedCategory,
   onSelect,
 }) => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <div className="flex flex-wrap justify-center gap-4 mb-12">
       {categories.map((category, index) => (

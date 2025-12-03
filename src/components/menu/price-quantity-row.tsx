@@ -1,24 +1,26 @@
 import React from "react";
 import { COLORS, TYPOGRAPHY } from "../../constants/designTokens";
 
-interface PriceQuantityRowProps {
+type PriceQuantityRowProps = {
   price: number;
   quantity: number;
   onQuantityChange: (delta: number) => void;
-}
+};
 
-/**
- * PriceQuantityRow Component
- * Displays pizza price and quantity controls (increase/decrease buttons)
- */
 export const PriceQuantityRow: React.FC<PriceQuantityRowProps> = ({
   price,
   quantity,
   onQuantityChange,
 }) => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <div className="flex items-center justify-between mb-4">
+      {/*--------------------------------------------------------------------------*/}
       {/* Price Display */}
+      {/*--------------------------------------------------------------------------*/}
+
       <div className="flex items-baseline">
         <span
           className="text-white font-medium"
@@ -34,7 +36,10 @@ export const PriceQuantityRow: React.FC<PriceQuantityRowProps> = ({
         </span>
       </div>
 
+      {/*--------------------------------------------------------------------------*/}
       {/* Quantity Controls */}
+      {/*--------------------------------------------------------------------------*/}
+
       <div className="flex items-center gap-3">
         <button
           onClick={() => onQuantityChange(-1)}

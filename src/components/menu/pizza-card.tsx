@@ -29,10 +29,6 @@ type PizzaCardProps = {
   onSizeSelect: (id: number, size: PizzaSize) => void;
 };
 
-/**
- * PizzaCard Component
- * Displays individual pizza with image, details, size selection, and order controls
- */
 export const PizzaCard: React.FC<PizzaCardProps> = ({
   pizza,
   quantity,
@@ -40,6 +36,9 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
   onQuantityChange,
   onSizeSelect,
 }) => {
+  // ---------------------------------------------------------------------------
+  // functions
+  // ---------------------------------------------------------------------------
   const handleQuantityChange = (delta: number) => {
     onQuantityChange(pizza.id, delta);
   };
@@ -48,6 +47,9 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
     onSizeSelect(pizza.id, size);
   };
 
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <div
       className="flex flex-col items-center w-full max-w-sm"
@@ -55,10 +57,16 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
         width: SPACING.cardWidth,
       }}
     >
+      {/*--------------------------------------------------------------------------*/}
       {/* Pizza Image - Floating above card */}
+      {/*--------------------------------------------------------------------------*/}
+
       <PizzaImage src={pizza.image} alt={pizza.name} />
 
+      {/*--------------------------------------------------------------------------*/}
       {/* Card Background with Content */}
+      {/*--------------------------------------------------------------------------*/}
+
       <div
         className="w-full rounded-[30px]"
         style={{
@@ -70,7 +78,9 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
           boxShadow: SHADOWS.cardShadow,
         }}
       >
+        {/*--------------------------------------------------------------------------*/}
         {/* Pizza Name */}
+        {/*--------------------------------------------------------------------------*/}
         <h4
           className="text-white font-medium text-center mb-4"
           style={{
@@ -81,7 +91,9 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
           {pizza.name}
         </h4>
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Description */}
+        {/*--------------------------------------------------------------------------*/}
         <p
           className="text-[#A3A3A3] text-center mb-4"
           style={{
@@ -92,20 +104,32 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
           {pizza.description}
         </p>
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Size Selection */}
+        {/*--------------------------------------------------------------------------*/}
+
         <SizeSelector selectedSize={selectedSize} onSelect={handleSizeSelect} />
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Ingredients Button */}
+        {/*--------------------------------------------------------------------------*/}
+
         <IngredientsButton />
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Price & Quantity Row */}
+        {/*--------------------------------------------------------------------------*/}
+
         <PriceQuantityRow
           price={pizza.price}
           quantity={quantity}
           onQuantityChange={handleQuantityChange}
         />
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Order Button */}
+        {/*--------------------------------------------------------------------------*/}
+
         <button
           className="w-full rounded-full text-white font-medium hover:shadow-orange-lg transition-all"
           style={{

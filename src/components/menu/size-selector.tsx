@@ -6,19 +6,18 @@ import {
   PizzaSize,
 } from "../../constants/designTokens";
 
-interface SizeSelectorProps {
+type SizeSelectorProps = {
   selectedSize: PizzaSize;
   onSelect: (size: PizzaSize) => void;
-}
+};
 
-/**
- * SizeSelector Component
- * Allows users to select pizza size (22, 28, 33 cm)
- */
 export const SizeSelector: React.FC<SizeSelectorProps> = ({
   selectedSize,
   onSelect,
 }) => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <div className="flex justify-center gap-[37px] mb-6">
       {PIZZA_SIZES.map((size) => (

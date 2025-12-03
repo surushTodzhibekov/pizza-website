@@ -1,16 +1,15 @@
 import React from "react";
 import { SPACING } from "../../constants/designTokens";
 
-interface PizzaImageProps {
+type PizzaImageProps = {
   src: string;
   alt: string;
-}
+};
 
-/**
- * PizzaImage Component
- * Displays pizza image with floating effect above the card
- */
 export const PizzaImage: React.FC<PizzaImageProps> = ({ src, alt }) => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <div
       className="flex justify-center -mb-[50px] relative z-10"

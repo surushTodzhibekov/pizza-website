@@ -7,11 +7,10 @@ import {
   getGradientTextStyle,
 } from "../../constants/designTokens";
 
-/**
- * IngredientsButton Component
- * Displays ingredients button with gradient border effect
- */
 export const IngredientsButton: React.FC = () => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <button
       className="w-full rounded-full mb-4 transition-all hover:opacity-80"

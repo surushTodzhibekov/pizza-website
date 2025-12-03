@@ -96,11 +96,10 @@ const PIZZAS: Pizza[] = [
   },
 ];
 
-/**
- * Menu Component
- * Main menu section with pizza filtering, categories, and ordering
- */
 const Menu: React.FC = () => {
+  // ---------------------------------------------------------------------------
+  // variables & hooks
+  // ---------------------------------------------------------------------------
   const {
     selectedCategory,
     setSelectedCategory,
@@ -120,10 +119,16 @@ const Menu: React.FC = () => {
   const firstRowPizzas = filteredPizzas.slice(0, 4);
   const secondRowPizzas = filteredPizzas.slice(4, 8);
 
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <section id="menu" className="py-24 px-8 relative overflow-hidden">
       <div className="max-w-[1254px] mx-auto relative z-10">
+        {/*--------------------------------------------------------------------------*/}
         {/* Section Title */}
+        {/*--------------------------------------------------------------------------*/}
+
         <div className="text-center mb-8">
           <h2
             className="font-extrabold text-white"
@@ -136,14 +141,20 @@ const Menu: React.FC = () => {
           </h2>
         </div>
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Category Filters */}
+        {/*--------------------------------------------------------------------------*/}
+
         <CategoryFilter
           categories={CATEGORIES}
           selectedCategory={selectedCategory}
           onSelect={setSelectedCategory}
         />
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Pizza Grid - Row 1 */}
+        {/*--------------------------------------------------------------------------*/}
+
         <div
           className="flex flex-wrap justify-center mb-[22px]"
           style={{
@@ -175,7 +186,10 @@ const Menu: React.FC = () => {
           )}
         </div>
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Most Popular Banner */}
+        {/*--------------------------------------------------------------------------*/}
+
         <div
           className="mb-12 rounded-[34px] overflow-hidden relative"
           style={{
@@ -201,7 +215,10 @@ const Menu: React.FC = () => {
           </div>
         </div>
 
+        {/*--------------------------------------------------------------------------*/}
         {/* Pizza Grid - Row 2 */}
+        {/*--------------------------------------------------------------------------*/}
+
         <div
           className="flex flex-wrap justify-center"
           style={{
