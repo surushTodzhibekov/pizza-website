@@ -1,13 +1,13 @@
 import React from "react";
-import { TYPOGRAPHY } from "../constants/designTokens";
-import { EventCard } from "./Events/EventCard";
+import { TYPOGRAPHY } from "../../constants/designTokens";
+import { EventCard } from "./event-card";
 
-interface Event {
+type Event = {
   id: string;
   title: string;
   image: string;
   gridArea: string;
-}
+};
 
 const CARD_HEIGHT = 260;
 
@@ -89,7 +89,7 @@ const DECORATIONS: Record<
   },
 };
 
-const Events: React.FC = () => {
+export function Events() {
   const handleEventClick = (eventId: string) => {
     console.log(`Event clicked: ${eventId}`);
     // Add navigation or modal logic here
@@ -224,6 +224,4 @@ const Events: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Events;
+}
