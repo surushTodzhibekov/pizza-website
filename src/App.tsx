@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Events from "./components/Events";
-import Menu from "./components/Menu";
+import Menu from "./components/menu";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
