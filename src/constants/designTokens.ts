@@ -29,6 +29,7 @@ export const TYPOGRAPHY = {
     cardName: "25.1px",
     cardPrice: "25.46px",
     description: "14.32px",
+    eventDescription: "19.56px",
     priceSymbol: "16.97px",
     categoryButton: "20px",
     ingredientsButton: "16.08px",
