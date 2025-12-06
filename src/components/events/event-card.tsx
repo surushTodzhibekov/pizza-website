@@ -1,19 +1,15 @@
 import React from "react";
 import { COLORS, TYPOGRAPHY } from "../../constants/designTokens";
 
-interface EventCardProps {
+type EventCardProps = {
   title: string;
   image: string;
   buttonText?: string;
   onClick?: () => void;
   width: string;
   height: string;
-}
+};
 
-/**
- * EventCard Component
- * Displays individual event card with image overlay, title, and action button
- */
 export const EventCard: React.FC<EventCardProps> = ({
   title,
   image,
