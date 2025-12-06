@@ -1,8 +1,8 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import { Events } from "./components/events/Events";
+import { Events } from "./components/events/events";
 import Menu from "./components/menu";
-import About from "./components/About";
+import About from "./components/about/about";
 import Footer from "./components/Footer";
 
 function App() {
