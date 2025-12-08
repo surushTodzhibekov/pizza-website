@@ -1,19 +1,25 @@
 import React from "react";
+import { Instagram, Twitter, Facebook } from "lucide-react";
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer
-      className="py-[70px] px-8"
+      className="py-8 lg:py-[70px] px-4 lg:px-8"
       style={{
         background:
           "linear-gradient(223deg, #170A00 4%, #170600 34%, #0F0700 71%, #170A00 100%)",
       }}
     >
       <div className="max-w-[1252px] mx-auto">
+        {/*--------------------------------------------------------------------------*/}
         {/* Main Footer Content */}
-        <div className="flex justify-between mb-[34px]">
+        {/*--------------------------------------------------------------------------*/}
+        <div className="flex flex-col lg:flex-row lg:gap-[84px] mb-8">
+          {/*--------------------------------------------------------------------------*/}
           {/* Logo */}
-          <div>
+          {/*--------------------------------------------------------------------------*/}
+
+          <div className="mb-6 lg:mb-0">
             <h3
               className="font-extrabold bg-clip-text text-transparent"
               style={{
@@ -28,9 +34,15 @@ const Footer: React.FC = () => {
             </h3>
           </div>
 
+          {/*--------------------------------------------------------------------------*/}
           {/* Navigation Columns */}
-          <div className="flex gap-[84px]">
+          {/*--------------------------------------------------------------------------*/}
+
+          <div className="grid grid-cols-2 lg:flex lg:gap-[84px] gap-6 mb-8 lg:mb-0">
+            {/*--------------------------------------------------------------------------*/}
             {/* Home Column */}
+            {/*--------------------------------------------------------------------------*/}
+
             <div>
               <h4
                 className="text-[#A3A3A3] mb-[22px]"
@@ -98,7 +110,10 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
+            {/*--------------------------------------------------------------------------*/}
             {/* Events Column */}
+            {/*--------------------------------------------------------------------------*/}
+
             <div>
               <h4
                 className="text-[#A3A3A3] mb-[22px]"
@@ -153,7 +168,10 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
+            {/*--------------------------------------------------------------------------*/}
             {/* Menu Column */}
+            {/*--------------------------------------------------------------------------*/}
+
             <div>
               <h4
                 className="text-[#A3A3A3] mb-[22px]"
@@ -221,7 +239,10 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
+            {/*--------------------------------------------------------------------------*/}
             {/* About Us Column */}
+            {/*--------------------------------------------------------------------------*/}
+
             <div>
               <h4
                 className="text-[#A3A3A3] mb-[22px]"
@@ -265,56 +286,90 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Phone Contact */}
-        <div className="flex items-center gap-3">
-          {/* Phone Icon */}
-          <div className="flex items-center gap-2">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+        {/*--------------------------------------------------------------------------*/}
+        {/* Footer Bottom: Contact & Socials */}
+        {/*--------------------------------------------------------------------------*/}
+
+        <div className="flex flex-row justify-between items-center gap-2 lg:gap-0 mt-[94px]">
+          {/*--------------------------------------------------------------------------*/}
+          {/* Phone Contact */}
+          {/*--------------------------------------------------------------------------*/}
+
+          <div className="flex items-center gap-3">
+            <a
+              href="tel:+79373335533"
+              className="bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+              style={{
+                fontSize: "20.88px",
+                lineHeight: "1.257",
+                letterSpacing: "-2%",
+                background: "linear-gradient(215deg, #FF612E 0%, #FFA32B 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+              }}
             >
-              <defs>
-                <linearGradient
-                  id="phoneGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#FF6129" />
-                  <stop offset="100%" stopColor="#FFA32B" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M29.5 22.8v4.2a2.8 2.8 0 01-3.05 2.8A27.72 27.72 0 012.2 5.55 2.8 2.8 0 015 2.5h4.2a2.8 2.8 0 012.8 2.41 18 18 0 00.98 3.93 2.8 2.8 0 01-.63 2.96l-1.78 1.78a22.4 22.4 0 009.86 9.86l1.78-1.78a2.8 2.8 0 012.96-.63 18 18 0 003.93.98 2.8 2.8 0 012.4 2.84z"
-                stroke="url(#phoneGradient)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              +7 (937) 333-55-33
+            </a>
           </div>
-          <a
-            href="tel:+79373335533"
-            className="bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            style={{
-              fontSize: "20.88px",
-              lineHeight: "1.257",
-              letterSpacing: "-2%",
-              background: "linear-gradient(215deg, #FF612E 0%, #FFA32B 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-            }}
-          >
-            +7 (937) 333-55-33
-          </a>
+
+          {/*--------------------------------------------------------------------------*/}
+          {/* Social Media Icons */}
+          {/*--------------------------------------------------------------------------*/}
+
+          <div className="flex gap-4">
+            {/* Instagram */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Instagram"
+            >
+              <Instagram
+                size={28}
+                strokeWidth={1.5}
+                style={{
+                  stroke: "#FF6129",
+                }}
+              />
+            </a>
+
+            {/* Twitter */}
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Twitter"
+            >
+              <Twitter
+                size={28}
+                strokeWidth={1.5}
+                style={{
+                  stroke: "#FF612E",
+                }}
+              />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Facebook"
+            >
+              <Facebook
+                size={28}
+                strokeWidth={1.5}
+                style={{
+                  stroke: "#FF6129",
+                }}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;
