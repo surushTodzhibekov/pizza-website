@@ -1,4 +1,3 @@
-import React from "react";
 import { TYPOGRAPHY } from "../../constants/designTokens";
 import { EventCard } from "./event-card";
 
@@ -79,7 +78,7 @@ const DECORATIONS: Record<
     src: "/images/burito.png",
     alt: "Decorative burrito illustration",
     className:
-      "hidden lg:block absolute -right-28 top-1/2 -translate-y-1/2 w-[258px] z-10 pointer-events-none select-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]",
+      "hidden  absolute -right-28 top-1/2 -translate-y-1/2 w-[258px] z-10 pointer-events-none select-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]",
   },
   coffee: {
     src: "/images/cofee.png",
