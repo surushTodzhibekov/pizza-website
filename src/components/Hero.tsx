@@ -222,6 +222,7 @@ export const Hero: React.FC = () => {
               />
 
               {/* Decorative Fries - bottom left edge */}
+
               <img
                 src="/images/fries.png"
                 alt=""

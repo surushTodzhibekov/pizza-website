@@ -3,7 +3,7 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 
 export const Header: React.FC = () => {
   // ---------------------------------------------------------------------------
-  // variables & hooks
+  // variables
   // ---------------------------------------------------------------------------
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("Home");

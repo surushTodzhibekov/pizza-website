@@ -2,6 +2,9 @@ import React from "react";
 import { Instagram, Twitter, Facebook } from "lucide-react";
 
 export const Footer: React.FC = () => {
+  // ---------------------------------------------------------------------------
+  // render
+  // ---------------------------------------------------------------------------
   return (
     <footer
       className="py-8 lg:py-[70px] px-4 lg:px-8"
