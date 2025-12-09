@@ -1,9 +1,9 @@
+import { Header } from "./components/header";
+import { Hero } from "./components/hero";
+import { Events } from "./components/events/events";
 import Menu from "./components/menu";
 import About from "./components/about/about";
-import { Hero } from "./components/Hero";
-import { Header } from "./components/Header";
-import { Events } from "./components/events/events";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Menu />
         <Events />
+        <Menu />
         <About />
       </main>
       <Footer />
