@@ -65,7 +65,7 @@ const About: React.FC = () => {
             {/* Decorative icons with dashed arrow */}
             <div className="mb-6 h-[189px] relative">
               <img
-                src="/images/group-pizza.png"
+                src="./images/group-pizza.png"
                 alt="Pizza variety illustration"
                 className="w-full h-full object-cover"
               />
@@ -115,14 +115,14 @@ const About: React.FC = () => {
           <div className="relative">
             {/* Pizza slice decoration - top right */}
             <img
-              src="/images/pizza-1.png"
+              src="./images/pizza-1.png"
               alt="Decorative pizza slice"
               className="hidden lg:block absolute top-8 -right-12 w-[140px] z-20 pointer-events-none select-none"
             />
 
             {/* French fries decoration - bottom left */}
             <img
-              src="/images/fries.png"
+              src="./images/fries.png"
               alt="Decorative french fries"
               className="hidden lg:block absolute -bottom-8 -left-16 w-[140px] z-20 pointer-events-none select-none"
             />
@@ -134,7 +134,7 @@ const About: React.FC = () => {
               }}
             >
               <img
-                src="/images/about-pizza.jpg"
+                src="./images/about-pizza.jpg"
                 alt="Delicious pizza from our kitchen"
                 className="w-full h-full object-cover"
               />
