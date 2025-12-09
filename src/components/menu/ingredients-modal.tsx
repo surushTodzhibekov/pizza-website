@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import { SIZES, TYPOGRAPHY, SHADOWS } from "../../constants/designTokens";
+import { Button } from "../ui/button";
 
 type Ingredient = {
   id: number;
@@ -158,12 +159,15 @@ export const IngredientsModal: React.FC<IngredientsModalProps> = ({
                   Choose your favorite toppings
                 </p>
               </div>
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={onClose}
-                className="flex-shrink-0 p-2 hover:bg-[#FF6432]/10 rounded-full transition-colors"
+                className="flex-shrink-0 p-2 hover:bg-[#FF6432]/10"
+                style={{ background: "transparent" }}
               >
                 <X size={24} style={{ color: "#FF6432" }} />
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -260,9 +264,11 @@ export const IngredientsModal: React.FC<IngredientsModalProps> = ({
           {/* ----------------------------------------------------------------------------------- */}
 
           <div className="sticky bottom-0 bg-gradient-to-t from-[#1E0C00] to-transparent p-6 border-t border-[#FF6432]/20 space-y-3">
-            <button
+            <Button
+              variant="primary"
+              fullWidth
               onClick={handleApply}
-              className="w-full rounded-full text-white font-bold hover:shadow-orange-lg transition-all transform hover:scale-105"
+              className="transform hover:scale-105"
               style={{
                 height: SIZES.orderButtonHeight,
                 background: "linear-gradient(215deg, #FF6432 0%, #FFA228 100%)",
@@ -271,19 +277,18 @@ export const IngredientsModal: React.FC<IngredientsModalProps> = ({
               }}
             >
               Apply ({selectedCount})
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="secondary"
+              fullWidth
               onClick={onClose}
-              className="w-full rounded-full font-medium transition-all hover:opacity-80"
               style={{
                 height: SIZES.orderButtonHeight,
-                color: "#A3A3A3",
-                background: "rgba(255, 100, 50, 0.05)",
                 fontSize: TYPOGRAPHY.fontSize.ingredientsButton,
               }}
             >
               Cancel
-            </button>
+            </Button>
           </div>
 
           {/* ----------------------------------------------------------------------------------- */}

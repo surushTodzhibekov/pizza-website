@@ -14,6 +14,7 @@ import { IngredientsModal } from "./ingredients-modal";
 import { PriceQuantityRow } from "./price-quantity-row";
 import { useCart } from "../../contexts/cart-context";
 import { Toast } from "../ui/toast";
+import { Button } from "../ui/button";
 
 type Ingredient = {
   id: number;
@@ -187,9 +188,10 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
           {/* Order Button */}
           {/*--------------------------------------------------------------------------*/}
 
-          <button
+          <Button
+            variant="primary"
+            fullWidth
             onClick={handleOrderNow}
-            className="w-full rounded-full text-white font-medium hover:shadow-orange-lg transition-all"
             style={{
               height: SIZES.orderButtonHeight,
               background: COLORS.gradientPrimary,
@@ -198,7 +200,7 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({
             }}
           >
             Order Now
-          </button>
+          </Button>
         </div>
       </div>
 

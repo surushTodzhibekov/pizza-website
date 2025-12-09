@@ -2,6 +2,7 @@ import React from "react";
 import { X, Trash2, Plus, Minus } from "lucide-react";
 import { useCart } from "../../contexts/cart-context";
 import { SIZES, TYPOGRAPHY, SHADOWS } from "../../constants/designTokens";
+import { Button } from "../ui/button";
 
 type CartModalProps = {
   isOpen: boolean;
@@ -114,12 +115,15 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                   cart
                 </p>
               </div>
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={onClose}
-                className="flex-shrink-0 p-2 hover:bg-[#FF6432]/10 rounded-full transition-colors"
+                className="flex-shrink-0 p-2 hover:bg-[#FF6432]/10"
+                style={{ background: "transparent" }}
               >
                 <X size={24} style={{ color: "#FF6432" }} />
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -249,12 +253,18 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                           >
                             ${(item.price * item.quantity).toFixed(2)}
                           </span>
-                          <button
+                          <Button
+                            variant="ghost"
+                            size="sm"
                             onClick={() => removeFromCart(item.id)}
-                            className="p-1.5 hover:bg-[#FF6432]/20 rounded-lg transition-colors"
+                            className="p-1.5 hover:bg-[#FF6432]/20 rounded-lg"
+                            style={{
+                              background: "transparent",
+                              height: "auto",
+                            }}
                           >
                             <Trash2 size={16} style={{ color: "#FF6432" }} />
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -290,9 +300,11 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                 </span>
               </div>
 
-              <button
+              <Button
+                variant="primary"
+                fullWidth
                 onClick={handleCheckout}
-                className="w-full rounded-full text-white font-bold hover:shadow-orange-lg transition-all transform hover:scale-105"
+                className="transform hover:scale-105"
                 style={{
                   height: SIZES.orderButtonHeight,
                   background:
@@ -302,19 +314,18 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                 }}
               >
                 Checkout
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="secondary"
+                fullWidth
                 onClick={clearCart}
-                className="w-full rounded-full font-medium transition-all hover:opacity-80"
                 style={{
                   height: SIZES.orderButtonHeight,
-                  color: "#A3A3A3",
-                  background: "rgba(255, 100, 50, 0.05)",
                   fontSize: TYPOGRAPHY.fontSize.ingredientsButton,
                 }}
               >
                 Clear Cart
-              </button>
+              </Button>
             </div>
           )}
 

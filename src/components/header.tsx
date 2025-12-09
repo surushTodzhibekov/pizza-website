@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "../contexts/cart-context";
 import { CartModal } from "./cart/cart-modal";
+import { Button } from "./ui/button";
 
 export const Header: React.FC = () => {
   // ---------------------------------------------------------------------------
@@ -10,6 +11,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("Home");
+  const [showLoginTooltip, setShowLoginTooltip] = useState(false);
   const { totalItems } = useCart();
 
   // ---------------------------------------------------------------------------
@@ -63,10 +65,11 @@ export const Header: React.FC = () => {
               { name: "Events", id: "events" },
               { name: "About us", id: "aboutus" },
             ].map((item) => (
-              <button
+              <Button
                 key={item.name}
                 onClick={() => scrollToSection(item.id, item.name)}
-                className="relative transition-colors"
+                variant="ghost"
+                className="relative"
                 style={{
                   fontSize: "17.88px",
                   lineHeight: "1.095",
@@ -93,7 +96,7 @@ export const Header: React.FC = () => {
                     }}
                   ></div>
                 )}
-              </button>
+              </Button>
             ))}
           </nav>
 
@@ -102,25 +105,53 @@ export const Header: React.FC = () => {
           {/*--------------------------------------------------------------------------*/}
 
           <div className="hidden lg:flex items-center gap-[26px]">
-            <button
-              className="rounded-full text-white font-medium hover:shadow-orange-lg transition-all"
-              style={{
-                width: "163px",
-                height: "40px",
-                background: "linear-gradient(215deg, #FF5D29 0%, #FE9C1C 100%)",
-                fontSize: "17.74px",
-                lineHeight: "1.095",
-              }}
-            >
-              Log in
-            </button>
-            <button
+            <div className="relative">
+              <Button
+                variant="primary"
+                size="md"
+                onMouseEnter={() => setShowLoginTooltip(true)}
+                onMouseLeave={() => setShowLoginTooltip(false)}
+                style={{
+                  width: "163px",
+                  fontSize: "17.74px",
+                  lineHeight: "1.095",
+                }}
+              >
+                Log in
+              </Button>
+              {showLoginTooltip && (
+                <div
+                  className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 whitespace-nowrap px-3 py-2 rounded-lg text-sm text-white pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(215deg, #1E0C00 0%, #2A1200 100%)",
+                    border: "1px solid #FF6432",
+                    boxShadow: "0 4px 12px rgba(255, 100, 50, 0.3)",
+                    animation: "fadeIn 0.2s ease-out",
+                  }}
+                >
+                  Login not yet implemented
+                  <div
+                    className="absolute bottom-full left-1/2 transform -translate-x-1/2"
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderLeft: "6px solid transparent",
+                      borderRight: "6px solid transparent",
+                      borderBottom: "6px solid #FF6432",
+                    }}
+                  ></div>
+                </div>
+              )}
+            </div>
+            <Button
+              variant="icon"
+              size="md"
               onClick={() => setIsCartOpen(true)}
-              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all relative"
+              className="relative"
               style={{
                 width: "40px",
                 height: "40px",
-                background: "linear-gradient(215deg, #FF6432 0%, #FFA228 100%)",
               }}
             >
               <ShoppingCart className="w-5 h-5 text-white" />
@@ -135,7 +166,7 @@ export const Header: React.FC = () => {
                   {totalItems}
                 </span>
               )}
-            </button>
+            </Button>
           </div>
 
           {/*--------------------------------------------------------------------------*/}
@@ -147,13 +178,14 @@ export const Header: React.FC = () => {
             {/* Mobile Cart Button */}
             {/*--------------------------------------------------------------------------*/}
 
-            <button
+            <Button
+              variant="icon"
+              size="md"
               onClick={() => setIsCartOpen(true)}
-              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all relative"
+              className="relative"
               style={{
                 width: "40px",
                 height: "40px",
-                background: "linear-gradient(215deg, #FF6432 0%, #FFA228 100%)",
               }}
             >
               <ShoppingCart className="w-5 h-5 text-white" />
@@ -168,23 +200,26 @@ export const Header: React.FC = () => {
                   {totalItems}
                 </span>
               )}
-            </button>
+            </Button>
 
             {/*--------------------------------------------------------------------------*/}
             {/* Mobile Menu Button */}
             {/*--------------------------------------------------------------------------*/}
 
-            <button
-              className="p-2 text-white"
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              className="p-2 text-white"
+              style={{ background: "transparent" }}
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
               ) : (
                 <Menu className="w-6 h-6" />
               )}
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -201,23 +236,51 @@ export const Header: React.FC = () => {
                 { name: "Events", id: "events" },
                 { name: "About us", id: "aboutus" },
               ].map((item) => (
-                <button
+                <Button
                   key={item.name}
+                  variant="ghost"
                   onClick={() => scrollToSection(item.id, item.name)}
-                  className="text-[#A3A3A3] hover:text-primary transition-colors font-normal text-left"
+                  className="text-left"
+                  style={{ background: "transparent" }}
                 >
                   {item.name}
-                </button>
+                </Button>
               ))}
-              <button
-                className="px-6 py-2.5 rounded-full text-white font-medium w-full"
-                style={{
-                  background:
-                    "linear-gradient(215deg, #FF5D29 0%, #FE9C1C 100%)",
-                }}
-              >
-                Log in
-              </button>
+              <div className="relative">
+                <Button
+                  variant="primary"
+                  fullWidth
+                  onMouseEnter={() => setShowLoginTooltip(true)}
+                  onMouseLeave={() => setShowLoginTooltip(false)}
+                  size="md"
+                >
+                  Log in
+                </Button>
+                {showLoginTooltip && (
+                  <div
+                    className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 whitespace-nowrap px-3 py-2 rounded-lg text-sm text-white pointer-events-none z-50"
+                    style={{
+                      background:
+                        "linear-gradient(215deg, #1E0C00 0%, #2A1200 100%)",
+                      border: "1px solid #FF6432",
+                      boxShadow: "0 4px 12px rgba(255, 100, 50, 0.3)",
+                      animation: "fadeIn 0.2s ease-out",
+                    }}
+                  >
+                    Login not yet implemented
+                    <div
+                      className="absolute bottom-full left-1/2 transform -translate-x-1/2"
+                      style={{
+                        width: 0,
+                        height: 0,
+                        borderLeft: "6px solid transparent",
+                        borderRight: "6px solid transparent",
+                        borderBottom: "6px solid #FF6432",
+                      }}
+                    ></div>
+                  </div>
+                )}
+              </div>
             </div>
           </nav>
         )}
@@ -225,6 +288,19 @@ export const Header: React.FC = () => {
 
       {/* Cart Modal */}
       <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-5px) translateX(-50%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+          }
+        }
+      `}</style>
     </header>
   );
 };
