@@ -28,7 +28,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 8.35,
-    image: "/images/pizza-italian.png",
+    image: "./images/pizza-italian.png",
     category: "Meat",
   },
   {
@@ -37,7 +37,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 7.35,
-    image: "/images/pizza-venecia.png",
+    image: "./images/pizza-venecia.png",
     category: "Vegetarian",
   },
   {
@@ -46,7 +46,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 9.35,
-    image: "/images/pizza-meat.png",
+    image: "./images/pizza-meat.png",
     category: "Meat",
   },
   {
@@ -55,7 +55,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 8.35,
-    image: "/images/pizza-cheese.png",
+    image: "./images/pizza-cheese.png",
     category: "Vegetarian",
   },
   {
@@ -64,7 +64,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 7.35,
-    image: "/images/pizza-argentina.png",
+    image: "./images/pizza-argentina.png",
     category: "Meat",
   },
   {
@@ -73,7 +73,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 6.35,
-    image: "/images/pizza-gribnaya.png",
+    image: "./images/pizza-gribnaya.png",
     category: "Mushroom",
   },
   {
@@ -82,7 +82,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 7.35,
-    image: "/images/pizza-tomato.png",
+    image: "./images/pizza-tomato.png",
     category: "Vegetarian",
   },
   {
@@ -91,7 +91,7 @@ const PIZZAS: Pizza[] = [
     description:
       "Filling: onion, potato, tomato, mushrooms, cheese, olives, meat...",
     price: 8.35,
-    image: "/images/pizza-italian-x2.png",
+    image: "./images/pizza-italian-x2.png",
     category: "Meat",
   },
 ];
@@ -197,7 +197,7 @@ const Menu: React.FC = () => {
           }}
         >
           <img
-            src="/images/most-popular-banner.png"
+            src="./images/most-popular-banner.png"
             alt="Most Popular Pizza"
             className="w-full h-full object-cover"
           />
