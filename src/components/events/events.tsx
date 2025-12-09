@@ -21,13 +21,13 @@ const EVENTS: Event[] = [
   {
     id: "blog",
     title: "OUR BLOG",
-    image: "./images/event-blog.png",
+    image: "./images/blog-pizza.jpg",
     gridArea: "blog",
   },
   {
     id: "pizza",
     title: "TWO PIZZA FOR 1 PRICE",
-    image: "./images/event-2pizza.png",
+    image: "./images/event-blog.png",
     gridArea: "pizza",
   },
   {
