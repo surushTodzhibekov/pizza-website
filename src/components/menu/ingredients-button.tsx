@@ -7,12 +7,19 @@ import {
   getGradientTextStyle,
 } from "../../constants/designTokens";
 
-export const IngredientsButton: React.FC = () => {
+type IngredientsButtonProps = {
+  onClick: () => void;
+};
+
+export const IngredientsButton: React.FC<IngredientsButtonProps> = ({
+  onClick,
+}) => {
   // ---------------------------------------------------------------------------
   // render
   // ---------------------------------------------------------------------------
   return (
     <button
+      onClick={onClick}
       className="w-full rounded-full mb-4 transition-all hover:opacity-80"
       style={{
         height: SIZES.ingredientsButtonHeight,
