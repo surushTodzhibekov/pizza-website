@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
+import { useCart } from "../contexts/cart-context";
+import { CartModal } from "./cart/cart-modal";
 
 export const Header: React.FC = () => {
   // ---------------------------------------------------------------------------
   // variables
   // ---------------------------------------------------------------------------
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("Home");
+  const { totalItems } = useCart();
 
   // ---------------------------------------------------------------------------
   // functions
@@ -24,7 +28,7 @@ export const Header: React.FC = () => {
   // render
   // ---------------------------------------------------------------------------
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent z-50 py-[48px]">
+    <header className="fixed top-0 left-0 right-0 bg-transparent z-30 py-[48px]">
       <div className="max-w-[1253px] mx-auto px-8">
         <div className="flex items-center justify-between">
           {/*--------------------------------------------------------------------------*/}
@@ -111,7 +115,8 @@ export const Header: React.FC = () => {
               Log in
             </button>
             <button
-              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all"
+              onClick={() => setIsCartOpen(true)}
+              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all relative"
               style={{
                 width: "40px",
                 height: "40px",
@@ -119,6 +124,17 @@ export const Header: React.FC = () => {
               }}
             >
               <ShoppingCart className="w-5 h-5 text-white" />
+              {totalItems > 0 && (
+                <span
+                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                  style={{
+                    background: "#FF0000",
+                    fontSize: "11px",
+                  }}
+                >
+                  {totalItems}
+                </span>
+              )}
             </button>
           </div>
 
@@ -132,7 +148,8 @@ export const Header: React.FC = () => {
             {/*--------------------------------------------------------------------------*/}
 
             <button
-              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all"
+              onClick={() => setIsCartOpen(true)}
+              className="rounded-full flex items-center justify-center hover:shadow-orange transition-all relative"
               style={{
                 width: "40px",
                 height: "40px",
@@ -140,6 +157,17 @@ export const Header: React.FC = () => {
               }}
             >
               <ShoppingCart className="w-5 h-5 text-white" />
+              {totalItems > 0 && (
+                <span
+                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                  style={{
+                    background: "#FF0000",
+                    fontSize: "11px",
+                  }}
+                >
+                  {totalItems}
+                </span>
+              )}
             </button>
 
             {/*--------------------------------------------------------------------------*/}
@@ -194,6 +222,9 @@ export const Header: React.FC = () => {
           </nav>
         )}
       </div>
+
+      {/* Cart Modal */}
+      <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
 };

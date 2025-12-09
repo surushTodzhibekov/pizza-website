@@ -4,19 +4,22 @@ import { Events } from "./components/events/events";
 import Menu from "./components/menu";
 import About from "./components/about/about";
 import { Footer } from "./components/footer";
+import { CartProvider } from "./contexts/cart-context";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-dark">
-      <Header />
-      <main>
-        <Hero />
-        <Events />
-        <Menu />
-        <About />
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen bg-gradient-dark">
+        <Header />
+        <main>
+          <Hero />
+          <Events />
+          <Menu />
+          <About />
+        </main>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }
 
