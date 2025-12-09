@@ -30,13 +30,6 @@ jobs:
           node-version: 20
           cache: "npm"
 
-      - name: Fix git casing issues
-        run: |
-          git config core.ignorecase false
-          git rm --cached -r src/components/
-          git reset HEAD src/components/
-          git checkout -- src/components/
-
       - name: Install dependencies
         run: npm ci
 
