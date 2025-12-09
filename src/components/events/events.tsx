@@ -15,43 +15,43 @@ const EVENTS: Event[] = [
   {
     id: "cooking",
     title: "HOW WE COOKING",
-    image: "/images/how-we-coock.png",
+    image: "./images/how-we-coock.png",
     gridArea: "cooking",
   },
   {
     id: "blog",
     title: "OUR BLOG",
-    image: "/images/event-blog.png",
+    image: "./images/event-blog.png",
     gridArea: "blog",
   },
   {
     id: "pizza",
     title: "TWO PIZZA FOR 1 PRICE",
-    image: "/images/event-2pizza.png",
+    image: "./images/event-2pizza.png",
     gridArea: "pizza",
   },
   {
     id: "kitchen",
     title: "KITCHEN TOUR",
-    image: "/images/event-kitchen.png",
+    image: "./images/event-kitchen.png",
     gridArea: "kitchen",
   },
   {
     id: "coffee",
     title: "FREE COFFEE FOR 3 PIZZA",
-    image: "/images/event-coffee.png",
+    image: "./images/event-coffee.png",
     gridArea: "coffee",
   },
   {
     id: "instagram",
     title: "OUR INSTAGRAM",
-    image: "/images/event-instagram.png",
+    image: "./images/event-instagram.png",
     gridArea: "instagram",
   },
   {
     id: "choose",
     title: "WHERE ARE YOU CHOOSE US?",
-    image: "/images/event-choose.png",
+    image: "./images/event-choose.png",
     gridArea: "choose",
   },
 ];
@@ -69,19 +69,19 @@ const DECORATIONS: Record<
   { src: string; className: string; alt: string }
 > = {
   pizza: {
-    src: "/images/egg-and-bacon.png",
+    src: "./images/egg-and-bacon.png",
     alt: "Decorative egg and bacon",
     className:
       "hidden lg:block absolute -left-24 -top-4 -translate-y-1/2 w-[150px] z-10 pointer-events-none select-none",
   },
   kitchen: {
-    src: "/images/burito.png",
+    src: "./images/burito.png",
     alt: "Decorative burrito illustration",
     className:
       "hidden  absolute -right-28 top-1/2 -translate-y-1/2 w-[258px] z-10 pointer-events-none select-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]",
   },
   coffee: {
-    src: "/images/cofee.png",
+    src: "./images/cofee.png",
     alt: "Decorative coffee cup",
     className:
       "hidden lg:block absolute -left-20 -bottom-12 w-[200px] z-10 pointer-events-none select-none",
