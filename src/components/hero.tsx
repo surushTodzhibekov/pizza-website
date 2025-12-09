@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
                 style={{ width: "280px", height: "180px" }}
               >
                 <img
-                  src="/images/cooking-process.png"
+                  src="./images/cooking-process.png"
                   alt="Cooking process"
                   className="w-full h-full object-cover"
                 />
@@ -204,7 +204,7 @@ export const Hero: React.FC = () => {
                 maxWidth: "456px",
                 height: "auto",
                 aspectRatio: "456 / 684",
-                backgroundImage: "url('/images/hero-pizza.png')",
+                backgroundImage: "url('./images/hero-pizza.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -213,7 +213,7 @@ export const Hero: React.FC = () => {
               {/* Decorative Pizza - top right */}
 
               <img
-                src="/images/pizza-1.png"
+                src="./images/pizza-1.png"
                 alt=""
                 className="lg:block absolute -top-6 -right-12 w-[140px] z-20 pointer-events-none select-none"
                 style={{
@@ -224,7 +224,7 @@ export const Hero: React.FC = () => {
               {/* Decorative Fries - bottom left edge */}
 
               <img
-                src="/images/fries.png"
+                src="./images/fries.png"
                 alt=""
                 className="lg:block absolute bottom-0 -left-16 w-[140px] z-20 pointer-events-none select-none object-contain"
                 style={{
