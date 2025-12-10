@@ -65,10 +65,12 @@ const About: React.FC = () => {
 
             {/* Decorative icons with dashed arrow */}
             <div className="mb-6 h-[189px] relative">
-              <img
-                src="./images/group-pizza.png"
+              <OptimizedImage
+                src="./images/group-pizza.webp"
                 alt="Pizza variety illustration"
                 className="w-full h-full object-cover"
+                priority={true}
+                showSkeleton={true}
               />
               {/* Dashed Arrow - positioned to the right of group-pizza */}
               <svg
