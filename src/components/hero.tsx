@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="pt-[130px] pb-16 px-4 lg:px-8 relative overflow-hidden"
+      className="pt-[130px] pb-16 px-6 lg:px-8 relative overflow-hidden"
     >
       <div className="max-w-[1367px] mx-auto relative z-10">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start pt-[50px]">
@@ -33,8 +33,8 @@ export const Hero: React.FC = () => {
 
             <div className="mb-[30px]">
               <h1
-                className="font-extrabold text-white leading-[1.095] inline-block text-center lg:text-left"
-                style={{ fontSize: "clamp(32px, 8vw, 69.17px)" }}
+                className="font-extrabold text-white leading-[1.095] text-left"
+                style={{ fontSize: "clamp(40px, 8vw, 69.17px)" }}
               >
                 The Fastest Pizza Delivery
               </h1>
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
             {/* --------------------------------------------------------------------------- */}
 
             <p
-              className="text-[#A3A3A3] leading-[1.51] mb-8 lg:mb-12 max-w-[450px] text-center lg:text-left mx-auto lg:mx-0"
+              className="text-[#A3A3A3] leading-[1.51] mb-8 lg:mb-12 max-w-[450px] text-left"
               style={{
                 fontSize: "clamp(16px, 4vw, 19.56px)",
               }}
@@ -55,11 +55,67 @@ export const Hero: React.FC = () => {
             </p>
 
             {/* --------------------------------------------------------------------------- */}
+            {/* CTA Buttons - Group 1 */}
+            {/* --------------------------------------------------------------------------- */}
+
+            <div className="flex flex-row items-center lg:justify-start mb-8 lg:mb-0 order-1 lg:order-2">
+              {/* To order button */}
+              <button
+                onClick={scrollToMenu}
+                className="rounded-full text-white font-medium hover:shadow-lg transition-all relative z-10"
+                style={{
+                  width: "clamp(140px, 30vw, 180px)",
+                  height: "clamp(50px, 12vw, 62px)",
+                  background:
+                    "linear-gradient(214deg, #FE9C1C 0%, #FF5E2A 100%)",
+                  fontSize: "clamp(16px, 4vw, 22.44px)",
+                  lineHeight: "1.235",
+                  fontWeight: "500",
+                  boxShadow: "0px 7px 33px rgba(255,107,0,0.06)",
+                }}
+              >
+                To order
+              </button>
+
+              {/* Pizza-Menu button - overlapping */}
+              <button
+                onClick={scrollToMenu}
+                className="rounded-full font-medium hover:opacity-90 transition-all -ml-[30px]"
+                style={{
+                  width: "clamp(180px, 35vw, 232px)",
+                  height: "clamp(50px, 12vw, 62px)",
+                  background: "transparent",
+                  border: "2px solid transparent",
+                  backgroundImage:
+                    "linear-gradient(#210A01, #210A01), linear-gradient(207deg, #FFA631 0%, #FF6939 100%)",
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
+                  fontSize: "clamp(14px, 3.5vw, 18.81px)",
+                  lineHeight: "1.235",
+                  fontWeight: "500",
+                  paddingLeft: "clamp(30px, 8vw, 40px)",
+                }}
+              >
+                <span
+                  style={{
+                    background:
+                      "linear-gradient(215deg, #FF6432 0%, #FFA228 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  Pizza-Menu
+                </span>
+              </button>
+            </div>
+
+            {/* --------------------------------------------------------------------------- */}
             {/* Video Preview Card - Group 14 */}
             {/* --------------------------------------------------------------------------- */}
 
             <div
-              className="relative mb-8 lg:mb-12 mx-auto lg:mx-0"
+              className="relative mb-8 lg:mb-12 order-2 lg:order-1"
               style={{ width: "280px" }}
             >
               {/* --------------------------------------------------------------------------- */}
@@ -131,63 +187,6 @@ export const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* --------------------------------------------------------------------------- */}
-            {/* CTA Buttons - Group 1 */}
-            {/* --------------------------------------------------------------------------- */}
-
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-[-40px]">
-              {/* To order button */}
-              <button
-                onClick={scrollToMenu}
-                className="rounded-full text-white font-medium hover:shadow-lg transition-all z-10 w-full sm:w-auto"
-                style={{
-                  maxWidth: "230px",
-                  width: "100%",
-                  height: "62px",
-                  background:
-                    "linear-gradient(214deg, #FE9C1C 0%, #FF5E2A 100%)",
-                  fontSize: "clamp(18px, 4vw, 22.44px)",
-                  lineHeight: "1.235",
-                  fontWeight: "500",
-                  boxShadow: "0px 7px 33px rgba(255,107,0,0.06)",
-                }}
-              >
-                To order
-              </button>
-
-              {/* Pizza-Menu button */}
-              <button
-                onClick={scrollToMenu}
-                className="rounded-full font-medium hover:opacity-90 transition-all w-full sm:w-auto sm:ml-[-50px]"
-                style={{
-                  maxWidth: "232px",
-                  width: "100%",
-                  height: "62px",
-                  background: "transparent",
-                  border: "2px solid transparent",
-                  backgroundImage:
-                    "linear-gradient(#210A01, #210A01), linear-gradient(207deg, #FFA631 0%, #FF6939 100%)",
-                  backgroundOrigin: "border-box",
-                  backgroundClip: "padding-box, border-box",
-                  fontSize: "clamp(16px, 3.5vw, 18.81px)",
-                  lineHeight: "1.235",
-                  fontWeight: "500",
-                }}
-              >
-                <span
-                  style={{
-                    background:
-                      "linear-gradient(215deg, #FF6432 0%, #FFA228 100%)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    color: "transparent",
-                  }}
-                >
-                  Pizza-Menu
-                </span>
-              </button>
             </div>
           </div>
 
