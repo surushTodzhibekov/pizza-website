@@ -1,5 +1,7 @@
 # Pizza Palace Website
 
+**[Live Demo](https://surushtodzhibekov.github.io/pizza-website/)**
+
 A modern, responsive pizza restaurant website built with React, TypeScript, and Tailwind CSS.
 
 ## Features
