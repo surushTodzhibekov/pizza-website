@@ -139,6 +139,7 @@ const About: React.FC = () => {
                 alt="Delicious pizza from our kitchen"
                 className="w-full h-full object-cover"
                 priority={true}
+                showSkeleton={true}
               />
             </div>
           </div>
