@@ -13,13 +13,8 @@ export default defineConfig({
         },
       },
     },
-    // Enable compression
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-      },
-    },
+    // Use esbuild for minification (faster and no extra dependency needed)
+    minify: "esbuild",
   },
   // Optimize images
   assetsInclude: ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.webp", "**/*.svg"],
