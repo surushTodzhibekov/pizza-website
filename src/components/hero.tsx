@@ -203,7 +203,7 @@ export const Hero: React.FC = () => {
                 maxWidth: "456px",
                 height: "auto",
                 aspectRatio: "456 / 684",
-                backgroundImage: "url('./images/hero-pizza.png')",
+                backgroundImage: "url('./images/hero-pizza.webp')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
