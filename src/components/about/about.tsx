@@ -1,5 +1,6 @@
 import React from "react";
 import { TYPOGRAPHY } from "../../constants/designTokens";
+import { OptimizedImage } from "../ui/optimized-image";
 
 // Reusable decorative text style
 const DECORATIVE_TEXT_STYLE: React.CSSProperties = {
@@ -133,10 +134,11 @@ const About: React.FC = () => {
                 boxShadow: "-15px 21px 68px rgba(103, 25, 0, 0.23)",
               }}
             >
-              <img
-                src="./images/about-pizza.jpg"
+              <OptimizedImage
+                src="./images/about-pizza.webp"
                 alt="Delicious pizza from our kitchen"
                 className="w-full h-full object-cover"
+                priority={true}
               />
             </div>
           </div>
